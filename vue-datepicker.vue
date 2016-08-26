@@ -128,11 +128,21 @@ exports.default = {
       this.showDay(next);
     },
     showDay: function showDay(time) {
-      if (time === undefined || !Date.parse(time)) {
+      // if (time === undefined || !Date.parse(time)) {
+      //   this.checked.currentMoment = (0, _moment2.default)();
+      // } else {
+      //   this.checked.currentMoment = (0, _moment2.default)(time, this.option.format);
+      // }
+
+      // this is modified by Walter 20160826
+      if (time === undefined) {
         this.checked.currentMoment = (0, _moment2.default)();
+      } else if (!Date.parse(time)) {
+        this.checked.currentMoment = (0, _moment2.default)(time, this.option.format);
       } else {
         this.checked.currentMoment = (0, _moment2.default)(time, this.option.format);
       }
+
       this.showOne('day');
 
       this.checked.year = (0, _moment2.default)(this.checked.currentMoment).format('YYYY');
