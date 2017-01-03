@@ -158,7 +158,7 @@ exports.default = {
         days.push({
           value: i,
           inMonth: true,
-          unavailable: false,
+          unavailable: true,
           checked: false,
           moment: (0, _moment2.default)(currentMoment).date(i)
         });
@@ -175,7 +175,7 @@ exports.default = {
           value: previousMonth.daysInMonth() - _i,
           inMonth: false,
           action: 'previous',
-          unavailable: false,
+          unavailable: true,
           checked: false,
           moment: (0, _moment2.default)(currentMoment).date(1).subtract(_i + 1, 'days')
         };
